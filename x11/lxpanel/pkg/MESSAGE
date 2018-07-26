@@ -1,0 +1,4 @@
+Example configuration files for lspanel can be found in 
+${PREFIX}/share/examples/lxpanel/* Simply copy folder contents to
+${SYSCONFDIR}/xdg/lxpanel/* and modify to your needs.
+

@@ -1,0 +1,3 @@
+In order to make use of lxmenu-data, copy provided configuration
+from ${PREFIX}/share/examples/lxmenu-data/menus/* to ${SYSCONFDIR}/xdg/menus/*
+
