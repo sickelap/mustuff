@@ -1,0 +1,11 @@
+$OpenBSD$
+
+Index: vendor/github.com/containerd/containerd/snapshotter_default_unix.go
+--- vendor/github.com/containerd/containerd/snapshotter_default_unix.go.orig
++++ vendor/github.com/containerd/containerd/snapshotter_default_unix.go
+@@ -1,4 +1,4 @@
+-// +build darwin freebsd solaris
++// +build darwin freebsd solaris openbsd
+ 
+ /*
+    Copyright The containerd Authors.

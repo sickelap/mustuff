@@ -1,0 +1,11 @@
+$OpenBSD$
+
+Index: vendor/github.com/containerd/continuity/fs/copy_unix.go
+--- vendor/github.com/containerd/continuity/fs/copy_unix.go.orig
++++ vendor/github.com/containerd/continuity/fs/copy_unix.go
+@@ -1,4 +1,4 @@
+-// +build solaris darwin freebsd
++// +build solaris darwin freebsd openbsd
+ 
+ package fs
+ 
