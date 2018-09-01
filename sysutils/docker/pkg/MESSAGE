@@ -1,0 +1,2 @@
+Documentation for Docker CLI can be found in ${PREFIX}/share/doc/docker.
+Shell completion scripts can be found in ${PREFIX}/share/examples/docker/completion

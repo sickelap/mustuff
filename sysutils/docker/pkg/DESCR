@@ -1,1 +1,11 @@
-https://docker.github.io
+Docker is used to run software packages called "containers".
+In a typical example use case, one container runs a web server and
+web application, while a second container runs a database server
+that is used by the web application. Containers are isolated from
+each other and bundle their own tools, libraries and configuration
+files; they can communicate with each other through well-defined
+channels. All containers are run by a single operating system kernel
+and are thus more lightweight than virtual machines. Containers are
+created from "images" that specify their precise contents. Images
+are often created by combining and modifying standard images
+downloaded from repositories. 
