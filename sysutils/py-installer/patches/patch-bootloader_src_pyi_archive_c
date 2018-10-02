@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: bootloader/src/pyi_archive.c
+--- bootloader/src/pyi_archive.c.orig
++++ bootloader/src/pyi_archive.c
+@@ -20,7 +20,7 @@
+     #include <winsock.h>  /* ntohl */
+ #else
+     #include <limits.h>  /* PATH_MAX - not available on windows. */
+-    #ifdef __FreeBSD__
++    #if defined(__FreeBSD__) || defined(__OpenBSD__)
+ /* freebsd issue #188316 */
+         #include <arpa/inet.h>  /* ntohl */
+     #else

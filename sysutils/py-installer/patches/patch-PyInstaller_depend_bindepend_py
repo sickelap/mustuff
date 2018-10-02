@@ -1,0 +1,35 @@
+$OpenBSD$
+
+Index: PyInstaller/depend/bindepend.py
+--- PyInstaller/depend/bindepend.py.orig
++++ PyInstaller/depend/bindepend.py
+@@ -22,7 +22,8 @@ import collections
+ 
+ from .. import compat
+ from ..compat import (is_win, is_unix, is_aix, is_solar, is_cygwin, is_hpux,
+-                      is_darwin, is_freebsd, is_venv, base_prefix, PYDYLIB_NAMES)
++                      is_darwin, is_freebsd, is_openbsd, is_venv, base_prefix,
++                      PYDYLIB_NAMES)
+ from . import dylib, utils
+ 
+ from .. import log as logging
+@@ -803,7 +804,7 @@ def findLibrary(name):
+                 paths.append('/usr/local/lib/hpux32')
+             else:
+                 paths.append('/usr/local/lib/hpux64')
+-        elif is_freebsd:
++        elif is_freebsd or is_openbsd:
+             paths.append('/usr/local/lib')
+         for path in paths:
+             libs = glob(os.path.join(path, name + '*'))
+@@ -816,8 +817,8 @@ def findLibrary(name):
+         return None
+ 
+     # Resolve the file name into the soname
+-    if is_freebsd or is_aix:
+-        # On FreeBSD objdump doesn't show SONAME,
++    if is_freebsd or is_openbsd or is_aix:
++        # On FreeBSD and OpenBSD objdump doesn't show SONAME,
+         # and on AIX objdump does not exist,
+         # so we just return the lib we've found
+         return lib

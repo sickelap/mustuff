@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: bootloader/src/pyi_launch.c
+--- bootloader/src/pyi_launch.c.orig
++++ bootloader/src/pyi_launch.c
+@@ -23,7 +23,7 @@
+     #include <windows.h>
+     #include <winsock.h>  /* ntohl */
+ #else
+-    #ifdef __FreeBSD__
++    #if defined(__FreeBSD__) || defined(__OpenBSD__)
+ /* freebsd issue #188316 */
+         #include <arpa/inet.h>  /* ntohl */
+     #else

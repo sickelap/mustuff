@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -21,8 +21,7 @@ from PyInstaller import (__version__ as version, is_li
+ 
+ REQUIREMENTS = [
+     'setuptools',
+-    'pefile >= 2017.8.1',
+-    'macholib >= 1.8',
++    'pefile >= 2017.8.1'
+ ]
+ 
+ # dis3 and xdis are used for our version of modulegraph
