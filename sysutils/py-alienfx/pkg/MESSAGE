@@ -1,0 +1,3 @@
+Theme examples can be found in ${PREFIX}/share/examples/alienfx/
+These json files should be placed either in $XDG_CONFIG_HOME/alienfx/
+or in ~/.config/alienfx/ if $XDG_CONFIG_HOME is not set.

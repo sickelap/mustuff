@@ -1,0 +1,43 @@
+$OpenBSD$
+
+Index: alienfx/core/usbdriver.py
+--- alienfx/core/usbdriver.py.orig
++++ alienfx/core/usbdriver.py
+@@ -96,21 +96,6 @@ class AlienFXUSBDriver(object):
+             msg += "VID {}".format(self._controller.vendor_id)
+             msg += ", PID {}".format(self._controller.product_id)
+             logging.error(msg)
+-        try:
+-            self._dev.detach_kernel_driver(0)
+-        except USBError as exc: 
+-            logging.error(
+-                "Cant detach kernel driver. Error : {}".format(exc.strerror))
+-        try:
+-            self._dev.set_configuration()
+-        except USBError as exc: 
+-            logging.error(
+-                "Cant set configuration. Error : {}".format(exc.strerror))
+-        try:
+-            usb.util.claim_interface(self._dev, 0)
+-        except USBError as exc: 
+-            logging.error(
+-                "Cant claim interface. Error : {}".format(exc.strerror))
+         self._control_taken = True
+         logging.debug("USB device acquired, VID={}, PID={}".format(
+             hex(self._controller.vendor_id), hex(self._controller.product_id)))
+@@ -119,15 +104,6 @@ class AlienFXUSBDriver(object):
+         """ Release control to libusb of the AlienFX controller."""
+         if not self._control_taken:
+             return
+-        try:
+-            usb.util.release_interface(self._dev, 0)
+-        except USBError as exc: 
+-            logging.error(
+-                "Cant release interface. Error : {}".format(exc.strerror))
+-        try:
+-            self._dev.attach_kernel_driver(0)
+-        except USBError as exc: 
+-            logging.error("Cant re-attach. Error : {}".format(exc.strerror))
+         self._control_taken = False
+         logging.debug("USB device released, VID={}, PID={}".format(
+             hex(self._controller.vendor_id), hex(self._controller.product_id)))
