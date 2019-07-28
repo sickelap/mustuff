@@ -129,6 +129,8 @@ share/doc/docker/commandline/wait.md
 share/doc/docker/glossary.md
 share/doc/docker/index.md
 share/doc/docker/run.md
+share/docs/
+share/docs/docker/
 share/examples/docker/
 share/examples/docker/completion/
 share/examples/docker/completion/bash/

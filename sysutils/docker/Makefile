@@ -4,8 +4,9 @@ ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		command line tool for Docker
 
-DISTNAME =		v18.09.0-ce-tp4
-PKGNAME =		docker-18.09.0-ce
+VERSION =		18.09.1
+DISTNAME =		v${VERSION}
+PKGNAME =		docker-${VERSION}
 CATEGORIES =		sysutils
 HOMEPAGE =		https://www.docker.com/
 
@@ -14,7 +15,7 @@ GH_PROJECT =		cli
 GH_TAGNAME =		${DISTNAME}
 
 # Apache Licence 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/go
 
